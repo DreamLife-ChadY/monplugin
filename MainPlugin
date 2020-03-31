@@ -1,0 +1,22 @@
+package fr.kalixx.monplugin;
+
+import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class MainPlugin extends JavaPlugin {
+	
+	@Override
+	public void onEnable() {
+		System.out.println("§aPlugin allumé avec succès");
+		
+		PluginManager pm = getServer().getPluginManager();
+		pm.registerEvents(new PlayerListener(this), this);
+	}
+	
+	@Override
+	public void onDisable() {
+		System.out.println("§cPlugin désactivé avec succès");
+		
+	}
+
+}
